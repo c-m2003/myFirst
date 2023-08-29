@@ -1,0 +1,29 @@
+phase 1.
+    basic ui toolbar and eventlisteners.
+        menu=> bars and cross , display and hide toolbar
+        pencil=>  click hide and display its container. functionality in phase 2.
+        erasor=>  click hide and display its container. functionality in phase 2.
+        upload=>  click to upload image from local storage
+        sticky notes=> click to create sticky note. drag and drop. minimise and remove
+
+    brief intro to canvas
+        <canvas> => set width,height
+        tool for graphics.
+            strokeStyle->(color), linewidth
+            beginPath()->start new graphic
+            moveTo(x,y)-> starting point.
+            lineTo(x,y)->invisible line to destination
+            stroke()->make line visible with strokestyle color
+
+phase-2. Canvas API[drawing] module: functionalities of download, undo, redo and erasor and pencil eventListeners
+    download=> canvas.toDataUL, anchor image a.click(); a.download attribue
+    undo/redo=> array and trck updated every mouseup. url in array
+    img.src=url, tool.drawImage
+
+    
+phase-3 [express and socket io];
+    socketio => realtime data transfer.
+
+
+
+
