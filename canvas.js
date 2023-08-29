@@ -111,7 +111,7 @@ canvas.addEventListener('mouseup',(e)=>{
 }); 
 
 function beginPath(strokeObj){
-    
+    // console.log(strokeObj+"stroke");
     tool.moveTo(strokeObj.clientX, strokeObj.clientY);
     tool.beginPath(); 
     

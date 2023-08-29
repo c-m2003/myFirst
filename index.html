@@ -56,12 +56,12 @@
 
     <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
         integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
-        crossorigin=""></script>
+        crossorigin="anonymous"></script>
 
         <script>
             //jo script pehle likhi hai wo pehle load hogi...    
             //ui wale par me client side script.. socket
-            let socket=io.connect("https://c-m2003.github.io//myFirst//");//connected frontend and backend    //iska accesss upar wle cdn se aaya
+            let socket=io.connect("http://localhost:5000");//connected frontend and backend    //iska accesss upar wle cdn se aaya
             //socket ka instance mil gya. iska reference niche wali files ke pas hai
         </script>
     <script src="./script.js"></script>
