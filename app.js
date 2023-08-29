@@ -16,7 +16,7 @@ app=express(); //initialising app an server ready
 app.use(cors()) // location of index.html
 app.use(express.static("./")); // location of index.html
 
-let port=5000;
+let port=process.env.PORT || 5000;
 let server = app.listen(port, ()=>{ //started listening
     console.log("Listening to port "+port);
 }); //
