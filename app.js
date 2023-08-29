@@ -7,7 +7,8 @@
 
 
 const express = require("express") //access  //returns a "function" of express
-const socket = require("socket.io"); //also a function
+
+const socket = require("socket.io")//also a function
 const cors= require("cors")
 app=express(); //initialising app an server ready
 //express was a function .. typical js
@@ -15,13 +16,17 @@ app=express(); //initialising app an server ready
 app.use(cors()) // location of index.html
 app.use(express.static("./")); // location of index.html
 
-let port=8080;
+let port=5000;
 let server = app.listen(port, ()=>{ //started listening
     console.log("Listening to port "+port);
 }); //
 
 //fend b-end ka connection ho gaya in index.html script
-let io=socket(server); //creating connection //initialisation of socket
+let io=socket(server,{
+    cors:{
+        origin:"*"
+    }
+}); //creating connection //initialisation of socket
 
 // console.log(io.sockets.emit)
 io.on("connection", (socket)=>{ //same as addEventListener in f-end. on is eventlistener for b-End
@@ -30,7 +35,7 @@ io.on("connection", (socket)=>{ //same as addEventListener in f-end. on is event
     //ab f-end se server ke pas data aagya.. ab server se saare connected comp pe bhejna hai
     socket.on("beginPath", (data)=>{ //data from f-End on mousedown
         //Now transfer data to connected devices
-        
+
         io.sockets.emit("beginPath", data);
 
     });

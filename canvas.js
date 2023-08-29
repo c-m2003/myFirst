@@ -3,6 +3,7 @@
 
 function understandingCanvas(){
     let canvas = document.querySelector('canvas')
+    
     canvas.width = window.innerWidth;//in px
     canvas.height = window.innerHeight;
 
@@ -30,6 +31,7 @@ function understandingCanvas(){
 }
 
 let canvas = document.querySelector('canvas')
+
 canvas.width = window.innerWidth;//in px
 canvas.height = window.innerHeight;
 let tool = canvas.getContext('2d');
@@ -95,7 +97,7 @@ canvas.addEventListener('mousemove', (e) => {
     }
         
     
-    //     socket.emit("drawStroke", data);
+        socket.emit("drawStroke", data);
     }
 });
 
@@ -109,6 +111,7 @@ canvas.addEventListener('mouseup',(e)=>{
 }); 
 
 function beginPath(strokeObj){
+    
     tool.moveTo(strokeObj.clientX, strokeObj.clientY);
     tool.beginPath(); 
     
@@ -232,7 +235,7 @@ socket.on("beginPath", (data)=>{ // recieving data from server
 //musemove pe drawstroke
 socket.on("drawStroke", (data)=>{ // recieving data from server
     drawStroke(data);
-    console.log(data)
+
 });
 
 
